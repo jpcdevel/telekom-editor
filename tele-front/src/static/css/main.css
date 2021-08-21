@@ -1,0 +1,307 @@
+@font-face {
+    font-family: RostelecomBasis-Bold;
+    src: url("../fonts/Rostelecom Basis Font/RostelecomBasis-Bold.otf")
+}
+
+@font-face {
+    font-family: RostelecomBasis-Medium;
+    src: url("../fonts/Rostelecom Basis Font/RostelecomBasis-Medium.otf")
+}
+
+@font-face {
+    font-family: RostelecomBasis-Light;
+    src: url("../fonts/Rostelecom Basis Font/RostelecomBasis-Light.otf")
+}
+
+@font-face {
+    font-family: RostelecomBasis-Regular;
+    src: url("../fonts/Rostelecom Basis Font/RostelecomBasis-Regular.otf")
+}
+
+html, body {
+    font-size: 10px;
+}
+
+p, span, li, a, div {
+    font-family: RostelecomBasis-Regular !important;
+    font-size: 1.5rem !important;
+    margin-bottom: 0;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+h1 {
+    font-family: RostelecomBasis-Bold;
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    margin-top: 70px;
+}
+
+.navbar {
+    height: 60px;
+    background: #101828;
+    /*box-shadow: 0px 0px 1px rgba(28, 41, 61, 0.1), 0px 4px 8px rgba(28, 41, 61, 0.1);*/
+    color: #fff;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.navbarContent {
+    height: 60px;
+    background: #fff;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 1;
+    align-items: center;
+    width: 100%;
+}
+
+.navbarIcons {
+    margin-left: 24px;
+    margin-top: 4px;
+}
+
+.navbarIcons .icon:nth-child(2) {
+    margin-left: 14px;
+}
+
+.textSwitch, .textSwitch p {
+    font-family: RostelecomBasis-Regular;
+    color: white;
+}
+
+.switch {
+    background-color: #4C525E !important;
+}
+
+.bar {
+    width: 250px;
+    height: 100vh;
+    background: #262D3C;
+    backdrop-filter: blur(15px);
+    padding-top: 60px;
+    color: white;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content {
+    margin: 80px 20px;
+    width: 790px;
+    display: flex;
+    justify-content: center;
+    overflow: auto !important;
+    max-height: 100vh;
+    background: #F4F4F5;
+}
+
+.contentDesktop {
+    background: #E8E8EE;
+    width: 100%;
+}
+
+.mainContent {
+    padding: 10px;
+}
+
+.widthMobile {
+    width: 395px;
+}
+
+.widthTablet {
+    width: 790px;
+}
+
+.pageName {
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    margin-left: -20px;
+}
+
+.barTabs {
+}
+
+.barTabs p {
+    font-size: 1.3rem !important;
+}
+
+.eFLCws {
+    font-size: 1.3rem !important;
+}
+
+.tabsHeight {
+    height: 44px !important;
+}
+
+.iohgnp {
+
+}
+
+.tabPageEdit, .tabElemLib {
+    color: white;
+}
+
+.pageLinks {
+    display: flex;
+}
+
+.pageLinks a {
+    color: #fff;
+    text-decoration: none;
+    transition: .1s;
+    margin: 0 10px
+}
+
+.pageLinks a:hover {
+    color: #FF5E2D;
+}
+
+.myProjects {
+    font-size: 5rem;
+}
+
+.createProject {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.createProjectBtn {
+    height: 30px !important;
+
+}
+
+.createProjectBtn span {
+    font-size: 1.6rem !important;
+    font-family: Montserrat-Medium !important;
+}
+
+.projects {
+    overflow-x: scroll
+}
+
+.projects::-webkit-scrollbar {
+    display: none;
+}
+
+.projectBox {
+    min-width: 540px;
+    min-height: 300px;
+    background: #000;
+    margin: 0 10px;
+    background: #2B292C;
+    border-radius: 4px;
+}
+
+.projectBox:nth-child(1) {
+    margin-left: 0;
+}
+
+.projectContent {
+    display: flex;
+    align-items: center;
+}
+
+.projectName {
+    font-size: 35px;
+    font-family: RostelecomBasis-Medium;
+}
+
+.projectLink {
+    color: #fff;
+    text-decoration: none;
+    transition: .1s;
+}
+
+.projectLink:hover {
+    color: #FF5E2D;
+}
+
+.accordionBtn {
+    width: 100%;
+    background: transparent;
+    border: none;
+    transition: .1s;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: left;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.activeAccordion {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.accordionBtn:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.accordionOption {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.accordionOption p:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.accordionOption p {
+    margin: 15px;
+    cursor: pointer;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+.pageNameInput {
+    background: rgba(255, 255, 255, 0.06);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    padding: 8px;
+}
+
+.resolutionBox {
+    margin-left: 20px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+}
+
+.rtCircularBtn {
+    border-radius: 16px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    padding: 6px 10px;
+}
+
+.rtBtnActive {
+    background: #FF5E2D;
+}
+
+.unactiveTab {
+    color: #A8ABB1 !important;
+}
+
+
