@@ -60,7 +60,7 @@ class Block(models.Model):
     global_box = models.BooleanField(default=True)
 
     def __str__(self):
-        return "block" + str(self.id)
+        return self.type + str(self.id)
 
     class Meta:
         ordering = ['order']

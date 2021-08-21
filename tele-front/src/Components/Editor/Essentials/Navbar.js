@@ -1,5 +1,5 @@
 import React, {useState, useContext, useEffect, useRef} from 'react'
-import { Download, Desktop, Switch, InputText } from "@design-system-rt/rtk-ui-kit";
+import { Download, Desktop, Switch, InputText, Button } from "@design-system-rt/rtk-ui-kit";
 import { Link } from 'react-router-dom'
 import {useMutation} from "@apollo/client";
 
@@ -11,11 +11,10 @@ import logo from '../../../static/images/logo.svg'
 import Loader from '../../etc/Loader'
 
 function Navbar() {
-    const [themeTrigger, setThemeTrigger] = useState(false)
     const [isPageNameEdit, setIsPageNameEdit] = useState(false)
     const [inputFocus, setInputFocus] = useState(false)
 
-    const { page, setPage, currentResolution, setCurrentResolution } = useContext(PageContext)
+    const { page, setPage, currentResolution, setCurrentResolution, themeTrigger, setThemeTrigger} = useContext(PageContext)
 
     const inputRef = useRef(null)
 
@@ -90,14 +89,13 @@ function Navbar() {
             </div>
             <div className="d-flex me-1 align-items-center">
                 <Switch
+                    // className={"rtCircularBtn"}
+                    style={{backgroundColor: themeTrigger? "rgb(29, 37, 51)": ""}}
                     color="primary2"
-                    onChange={function noRefCheck(e){
-                        setThemeTrigger(!themeTrigger)
-                    }}
+                    onChange={() => setThemeTrigger(!themeTrigger)}
                     shape="circular"
                     text="Тёмная тема"
                     textPosition="left"
-                    className={!themeTrigger ? "switch" : ''}
                     textClassName={"textSwitch"}
                 />
                 <div className="resolutionBox">

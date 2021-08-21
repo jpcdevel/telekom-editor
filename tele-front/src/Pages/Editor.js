@@ -14,11 +14,15 @@ export const PageContext = React.createContext([])
 function Editor() {
     const [page, setPage] = useState({})
     const [currentResolution, setCurrentResolution] = useState('tablet')
+    const [themeTrigger, setThemeTrigger] = useState(true)
+    const [isGrid, setIsGrid] = useState(true)
+
     const { id } = useParams()
 
     const {data, loading, error} = useQuery(GET_PAGE_BY_ID, {
         variables: { id },
         onCompleted: (data) => {
+            console.log(data)
             setPage(data.getPageById)
         },
         onError: (err) => {
@@ -28,12 +32,12 @@ function Editor() {
 
     document.body.style.backgroundColor = "#E8E8EE";
     return (
-        <PageContext.Provider value={{page, setPage, currentResolution, setCurrentResolution}}>
+        <PageContext.Provider value={{page, setPage, currentResolution, setCurrentResolution, isGrid, setIsGrid, themeTrigger, setThemeTrigger}}>
             <Loader loading={loading} color={"#000"} />
             {currentResolution !== 'desktop' && (
                 <Navbar />
             )}
-            <Main  />
+            <Main />
         </PageContext.Provider>
     )
 }

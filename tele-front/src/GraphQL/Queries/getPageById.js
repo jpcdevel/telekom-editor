@@ -5,6 +5,95 @@ export const GET_PAGE_BY_ID = gql`
         getPageById(id: $id) {
             id
             name
+            rows {
+                order
+                blocks {
+                    order
+                    type
+                    cols
+                    depth
+                    btnView
+                    value
+                    icon
+                    iconPosition
+                    cornersRounding
+                    color
+                    sizeElem
+                    shape
+                    disabled
+                    className
+                    typColor
+                    variant
+                    tag
+                    text
+                    spacingBottom
+                    spacingTop
+                    spacing
+                    label
+                    hint
+                    title
+                    defaultOpen
+                    selectItems {
+                        key
+                        value
+                    }
+                    fill
+                    size
+                    checked
+                    textPosition
+                    tabItems {
+                        index
+                        value
+                        icon
+                        iconPosition
+                    }
+                    boxChildren {
+                        order
+                        blocks {
+                            order
+                            type
+                            cols
+                            depth
+                            btnView
+                            value
+                            icon
+                            iconPosition
+                            cornersRounding
+                            color
+                            sizeElem
+                            shape
+                            disabled
+                            className
+                            typColor
+                            variant
+                            tag
+                            text
+                            spacingBottom
+                            spacingTop
+                            spacing
+                            label
+                            hint
+                            title
+                            defaultOpen
+                            selectItems {
+                                key
+                                value
+                            }
+                            fill
+                            size
+                            checked
+                            textPosition
+                            tabItems {
+                                index
+                                value
+                                icon
+                                iconPosition
+                            }
+                        }
+                    }
+                    globalBox
+                }
+            }
         }
     }
 `

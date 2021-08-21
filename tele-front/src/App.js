@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 import Editor from "./Pages/Editor";
+import CreatePage from "./Pages/CreatePage";
 
 import './static/css/main.css';
 
@@ -15,7 +16,10 @@ function App() {
       <Router>
         <div className="App">
             <Switch>
-                <Route path="/">
+                <Route exact path="/">
+                    <CreatePage />
+                </Route>
+                <Route path="/page/:id">
                     <Editor />
                 </Route>
             </Switch>

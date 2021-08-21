@@ -20,6 +20,7 @@
 
 html, body {
     font-size: 10px;
+    overflow: hidden
 }
 
 p, span, li, a, div {
@@ -101,6 +102,7 @@ h1 {
 .main {
     display: flex;
     justify-content: space-between;
+    overflow-x: hidden;
 }
 
 .content {
@@ -108,7 +110,8 @@ h1 {
     width: 790px;
     display: flex;
     justify-content: center;
-    overflow: auto !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
     max-height: 100vh;
     background: #F4F4F5;
 }
@@ -120,14 +123,16 @@ h1 {
 
 .mainContent {
     padding: 10px;
+    position: relative;
+    height: 100vh;
 }
 
 .widthMobile {
-    width: 395px;
+    width: 465px;
 }
 
 .widthTablet {
-    width: 790px;
+    width: 810px;
 }
 
 .pageName {
@@ -288,6 +293,16 @@ h1 {
     border-radius: 16px;
 }
 
+.box {
+
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+}
+
+
 .rtCircularBtn {
     border-radius: 16px;
     background: transparent;
@@ -303,5 +318,67 @@ h1 {
 .unactiveTab {
     color: #A8ABB1 !important;
 }
+
+.tabletContainerGap {
+    padding: 0 32px !important;
+}
+
+.mobileContainerGap {
+    padding: 0px !important;
+}
+
+.rowRt {
+    margin-top: 20px;
+}
+
+.colRt {
+    /*margin: 100px;*/
+}
+
+.gridRow {
+    height: 100%;
+
+}
+
+.gridContainer {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 10px;
+}
+
+.gridCol {
+    background: #3D343B;
+    /*padding: 20px;*/
+    height: 100vh;
+    opacity: 0.2;
+}
+
+.tabHeading {
+    font-size: 1.8rem;
+    font-family: RostelecomBasis-Regular;
+}
+
+.tabPageEdit {
+    padding: 10px;
+}
+
+.xSljY {
+    color: #fff !important;
+}
+
+.kvoOQq {
+    border: 1px solid #FF5E2D !important;
+}
+
+.kvoOQq svg {
+    fill: #fff !important;
+}
+
+.typElem {
+    min-width: auto !important;
+    width: 100%;
+}
+
 
 
