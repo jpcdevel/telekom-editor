@@ -16,6 +16,7 @@ class Page(models.Model):
 class Row(models.Model):
     blocks = models.ManyToManyField("Block", related_name='row_blocks', blank=True) # Cols
     order = models.IntegerField(default=1)
+    colsLasted = models.IntegerField(default=12)
 
     def __str__(self):
         return "row" + str(self.id)
@@ -24,6 +25,7 @@ class Row(models.Model):
         ordering = ['order']
 
 class Block(models.Model):
+    row = models.ForeignKey(Row, on_delete=models.DO_NOTHING, default=None, null=True, blank=True)
     order = models.IntegerField(default=1)
     type = models.CharField(max_length=20, default="")
     cols = models.IntegerField(default=1)
@@ -58,9 +60,36 @@ class Block(models.Model):
     box_children = models.ManyToManyField('Row', related_name="block_box_children", blank=True, default=None)
     corners_rounding = models.CharField(max_length=20, default="m")
     global_box = models.BooleanField(default=True)
+    offset = models.IntegerField(default=0)
 
     def __str__(self):
         return self.type + str(self.id)
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        total_cols = 0
+        for block in self.row.blocks.all():
+            total_cols += block.cols
+        cols_lasted = 12 - total_cols
+
+        if cols_lasted < 0:
+            cols_lasted = 0
+
+        self.row.colsLasted = cols_lasted
+        self.row.save()
+
+    def delete(self):
+        row = self.row
+        deletedCols = self.cols
+        super().delete()
+
+        newCols = row.colsLasted + deletedCols
+        if newCols == 12:
+            return row.delete()
+        else:
+            row.colsLasted += deletedCols
+            row.save()
+
 
     class Meta:
         ordering = ['order']

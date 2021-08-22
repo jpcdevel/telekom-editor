@@ -13,7 +13,8 @@ function MainPageEdit() {
                 <Checkbox
                     onClick={() => setIsGrid(!isGrid)}
                     defaultChecked={true}
-                    checked={isGrid ? true : false}
+                    checked={isGrid}
+                    className={"checkBoxGrid"}
                 >
                     Показывать сетку
                 </Checkbox>

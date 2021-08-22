@@ -6,8 +6,11 @@ export const GET_PAGE_BY_ID = gql`
             id
             name
             rows {
+                id
                 order
+                colsLasted
                 blocks {
+                    id
                     order
                     type
                     cols
@@ -49,7 +52,10 @@ export const GET_PAGE_BY_ID = gql`
                     }
                     boxChildren {
                         order
+                        id
+                        colsLasted
                         blocks {
+                            id
                             order
                             type
                             cols
@@ -89,9 +95,11 @@ export const GET_PAGE_BY_ID = gql`
                                 icon
                                 iconPosition
                             }
+                            offset
                         }
                     }
                     globalBox
+                    offset
                 }
             }
         }

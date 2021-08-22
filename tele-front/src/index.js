@@ -21,7 +21,7 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
 
 const link = from([
     errorLink,
-    new HttpLink({ uri: 'https://tele-api.herokuapp.com/graphql', credentials: 'include' }) // http://localhost:8000/graphql // https://tele-api.herokuapp.com/graphql
+    new HttpLink({ uri: 'http://localhost:8000/graphql', credentials: 'include' }) // http://localhost:8000/graphql // https://tele-api.herokuapp.com/graphql
 ])
 
 

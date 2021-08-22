@@ -9,12 +9,14 @@ import { PageContext } from "../../../Pages/Editor";
 import logo from '../../../static/images/logo.svg'
 
 import Loader from '../../etc/Loader'
+import html2canvas from "html2canvas";
 
 function Navbar() {
     const [isPageNameEdit, setIsPageNameEdit] = useState(false)
     const [inputFocus, setInputFocus] = useState(false)
 
     const { page, setPage, currentResolution, setCurrentResolution, themeTrigger, setThemeTrigger} = useContext(PageContext)
+    const { isGrid, setIsGrid } = useContext(PageContext)
 
     const inputRef = useRef(null)
 
@@ -43,18 +45,28 @@ function Navbar() {
                     <img src={logo} alt="" height="30px" />
                 </Link>
                 <div className="navbarIcons">
-                    <span className="icon">
-                      <Download
-                          fill="#fff"
-                          size={24}
-                      />
-                    </span>
-                    <span className="icon">
-                      <Desktop
-                          fill="#fff"
-                          size={24}
-                      />
-                    </span>
+                    <a  style={{cursor: "pointer"}} onClick={() => {
+
+                        html2canvas(document.getElementById("content"), {ignoreElements: (element) =>{
+                            if (element!== null && element.className !== null && typeof element.className === 'string'){
+                                return element && element.className !== null && element.className.includes("gridCol")
+
+                            }
+                            return false;
+                        }
+                        } ) .then(
+                            function (canvas) {
+                                var a = document.createElement('a');
+                                a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+                                a.download = 'somefilename.jpg';
+                                a.click();
+                            });
+                    }}>
+                        <Download
+                            fill="#fff"
+                            size={24}
+                        />
+                    </a>
                 </div>
             </div>
             <div className="pageName">
@@ -94,6 +106,7 @@ function Navbar() {
                     color="primary2"
                     onChange={() => setThemeTrigger(!themeTrigger)}
                     shape="circular"
+                    defaultChecked={!themeTrigger}
                     text="Тёмная тема"
                     textPosition="left"
                     textClassName={"textSwitch"}

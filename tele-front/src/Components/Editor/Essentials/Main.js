@@ -7,7 +7,7 @@ import SecondBar from "./SecondBar";
 import Content from "./Content";
 import {ThemeProvider} from "@design-system-rt/rtk-ui-kit";
 
-function Main() {
+function Main({refetch}) {
     const { currentResolution,themeTrigger } = useContext(PageContext)
     let bg_color = themeTrigger?  "#E5E5E5": "#1D2533"
     return (
@@ -16,11 +16,11 @@ function Main() {
                 <FirstBar />
             )}
             <ThemeProvider themeName={themeTrigger? "light": "dark"}>
-            <Content />
+            <Content refetch={refetch} />
             </ThemeProvider>
 
             {currentResolution !== 'desktop' && (
-                <SecondBar />
+                <SecondBar refetch={refetch} />
             )}
         </div>
     )

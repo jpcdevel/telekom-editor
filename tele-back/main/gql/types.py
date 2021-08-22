@@ -15,14 +15,17 @@ class RowType(DjangoObjectType):
     class Meta:
         model = Row
         fields = (
+            "id",
             "blocks",
-            "order"
+            "order",
+            "colsLasted"
         )
 
 class BlockType(DjangoObjectType):
     class Meta:
         model = Block
         fields = (
+            "id",
             "order",
             "type",
             "cols",
@@ -55,7 +58,8 @@ class BlockType(DjangoObjectType):
             "tab_items",
             "box_children",
             "corners_rounding",
-            "global_box"
+            "global_box",
+            "offset",
         )
 
 class SelectItemType(DjangoObjectType):
