@@ -12,7 +12,7 @@ function MainTabLib() {
     return (
         <div className="tabElemLib">
             <AccordionBtn
-                value={"Популярные"}
+                value={"Блоки"}
                 isActive={activeAccordion == 1}
                 number={1}
                 activeAccordion={activeAccordion}
