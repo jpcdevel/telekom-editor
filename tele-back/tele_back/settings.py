@@ -119,6 +119,7 @@ GRAPHENE = {
 }
 
 CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8080",
     "http://localhost:3000",
     "https://www.lycnet.ru",
     "https://lycnet.ru",
