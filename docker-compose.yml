@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+    api:
+      build: tele-back
+      command: python manage.py runserver 0.0.0.0:8000 --noreload
+      ports:
+        - "8000:8000"
+      container_name: tele-back-container
+    web:
+      build: tele-front
+      ports:
+        - "8080:80"
+      container_name: tele-front-container
