@@ -46,31 +46,6 @@ function MainTabLib() {
                         )}
                     </div>
 
-                    <div className={"accordionOption"}>
-                        <p
-                            onClick={() => setEdit({
-                                isEdit: true,
-                                editElem: "box"
-                            })}
-                            className={edit.editElem == "box" ? "activeElemLink" : ""}
-                        >
-                            Box
-                        </p>
-
-                        {edit.isEdit && edit.editElem == "box" && (
-                            <span
-                                className="cross"
-                                onClick={() => setEdit({
-                                    isEdit: false
-                                })}
-                            >
-                                <RemoveSmall
-                                    fill="#fff"
-                                    size={24}
-                                />
-                            </span>
-                        )}
-                    </div>
 
                     <div className={"accordionOption"}>
                         <p
@@ -325,9 +300,31 @@ function MainTabLib() {
                 setActiveAccordion={setActiveAccordion}
             />
             {activeAccordion == 2 && (
-                <div className="accordionOption">
-                    <p>Шаблон</p>
-                </div>
+                <div className={"accordionOption"}>
+                        <p
+                            onClick={() => setEdit({
+                                isEdit: true,
+                                editElem: "box"
+                            })}
+                            className={edit.editElem == "box" ? "activeElemLink" : ""}
+                        >
+                            Box
+                        </p>
+
+                        {edit.isEdit && edit.editElem == "box" && (
+                            <span
+                                className="cross"
+                                onClick={() => setEdit({
+                                    isEdit: false
+                                })}
+                            >
+                                <RemoveSmall
+                                    fill="#fff"
+                                    size={24}
+                                />
+                            </span>
+                        )}
+                    </div>
             )}
         </div>
     )
