@@ -9,7 +9,7 @@ class EditButton(graphene.Mutation):
         id = graphene.ID(required=True)
         value = graphene.String(required=True)
         color = graphene.String(required=True)
-        size = graphene.String(required=True)
+        size = graphene.String(required=False)
 
     block = graphene.Field(BlockType)
 
@@ -18,7 +18,8 @@ class EditButton(graphene.Mutation):
         block = Block.objects.get(id=id)
 
         block.value = value
-        block.sizeElem = size
+        if size:
+            block.sizeElem = size
         block.color = color
         block.save()
         return EditButton(block=block)
